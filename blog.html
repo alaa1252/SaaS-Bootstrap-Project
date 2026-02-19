@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Engine — SHARE-RIDE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .score-bar-wrap {
+            background: rgba(255,255,255,0.07);
+            border-radius: 50px;
+            height: 10px;
+            overflow: hidden;
+        }
+        .score-bar {
+            height: 100%;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            transition: width 1.4s ease;
+        }
+        .ai-step-num {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: #000;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .feedback-card {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 20px;
+        }
+        .sentiment-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-lg"
+     style="background-color: rgba(0,0,0,0.85); backdrop-filter: blur(10px);">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="Share-Ride Logo" width="50" height="50" class="d-inline-block align-text-top me-2" style="filter: drop-shadow(0 0 5px #ff7e5f);">
+        SHARE-RIDE
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Platform</a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="portfolio.html">Live Map</a></li>
+            <li><a class="dropdown-item active" href="blog.html">AI Engine</a></li>
+            <li><a class="dropdown-item" href="album.html">Album</a></li>
+            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+            <li><a class="dropdown-item" href="team.html">Team</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header text-center"
+         style="background: linear-gradient(135deg, rgba(116,149,163,0.5), rgba(32,58,67,0.7), rgba(44,83,100,0.5));">
+  <div class="container">
+    <h1 class="display-4 fw-bold text-gradient">AI Engine</h1>
+    <p class="lead text-white">The intelligence layer powering every dispatch, review, and prediction on SHARE-RIDE.</p>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="container py-5">
+  <div class="row align-items-center g-5">
+    <div class="col-lg-6">
+      <h2 class="fw-bold">What is the AI Engine?</h2>
+      <p class="text-white mt-3">The SHARE-RIDE AI Engine is a collection of machine learning models and groq-ai integrations that work together behind the scenes to make smarter decisions than any rule-based system could achieve alone.</p>
+      <p class="text-white">It handles three core jobs: matching the right driver to every ride, analyzing rider and driver feedback with natural language understanding, and predicting demand before it happens.</p>
+    </div>
+    <div class="col-lg-6">
+      <div class="row g-3 text-center">
+        <div class="col-6">
+          <div class="card bg-black bg-opacity-50 border-0 shadow-lg p-3 glass-card">
+            <i class="bi bi-lightning-charge-fill display-4 text-warning"></i>
+            <h6 class="text-white mt-2">Smart Dispatch</h6>
+            <p class="text-white small mb-0">Weighted driver scoring</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card bg-black bg-opacity-50 border-0 shadow-lg p-3 glass-card">
+            <i class="bi bi-chat-quote-fill display-4 text-info"></i>
+            <h6 class="text-white mt-2">Feedback Analysis</h6>
+            <p class="text-white small mb-0">groq-AI sentiment scoring</p>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SMART DISPATCH -->
+<section class="container py-5">
+  <h2 class="text-center fw-bold mb-2">Driver-Rider Matching Process</h2>
+  <p class="text-center text-white mb-5">
+    Each ride request triggers a real-time scoring process. Drivers are ranked, notified, and assigned based on multiple weighted metrics.
+  </p>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card bg-black bg-opacity-50 border-0 shadow-lg p-4 glass-card">
+
+        <div class="mb-4">
+          <div class="d-flex justify-content-between mb-1">
+            <span class="text-white">Proximity to Rider</span>
+            <span class="text-warning fw-bold">40%</span>
+          </div>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:40%;"></div></div>
+          <p class="text-white small mt-1 mb-0">
+            System queries drivers within a 5 km radius. Closest drivers earn higher proximity scores using Haversine formula and live traffic adjustments.
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <div class="d-flex justify-content-between mb-1">
+            <span class="text-white">Driver Status</span>
+            <span class="text-info fw-bold">15%</span>
+          </div>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:15%; background: linear-gradient(90deg,#4fc3f7,#81d4fa);"></div></div>
+          <p class="text-white small mt-1 mb-0">
+            Only drivers who are ONLINE are eligible. Offline drivers are filtered out automatically.
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <div class="d-flex justify-content-between mb-1">
+            <span class="text-white">Driver Rating</span>
+            <span class="text-success fw-bold">25%</span>
+          </div>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:25%; background: linear-gradient(90deg,#66bb6a,#a5d6a7);"></div></div>
+          <p class="text-white small mt-1 mb-0">
+            Rolling average of the last 50 completed rides, weighted for recency. Includes AI sentiment analysis from rider feedback.
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <div class="d-flex justify-content-between mb-1">
+            <span class="text-white">Response Time</span>
+            <span class="text-danger fw-bold">10%</span>
+          </div>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:10%; background: linear-gradient(90deg,#ef5350,#f48fb1);"></div></div>
+          <p class="text-white small mt-1 mb-0">
+            Measures how quickly a driver accepts or declines ride requests. Faster responders have higher scores.
+          </p>
+        </div>
+
+        <div class="mb-2">
+          <div class="d-flex justify-content-between mb-1">
+            <span class="text-white">Ride History & Experience</span>
+            <span class="text-warning fw-bold">10%</span>
+          </div>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:10%;"></div></div>
+          <p class="text-white small mt-1 mb-0">
+            Considers number of completed rides, cancellations, and experience in the pickup zone over the last 30 days.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-4">
+        <span class="badge bg-secondary me-2 p-2">
+          Formula: Score = (0.40 × Proximity) + (0.15 × Online Status) + (0.25 × Rating) + (0.10 × Response) + (0.10 × History)
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW DISPATCH WORKS STEP BY STEP -->
+<section class="container py-5">
+  <h2 class="text-center fw-bold mb-5">Dispatch — Step by Step</h2>
+  <div class="row justify-content-center">
+    <div class="col-lg-7">
+
+      <div class="d-flex align-items-start mb-4">
+        <div class="ai-step-num me-3">1</div>
+        <div>
+          <h5 class="text-white mb-1">Rider Submits Request</h5>
+          <p class="text-white">Pickup & drop coordinates are sent to the backend via REST API. The ride document is created with status <code>requested</code>.</p>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-start mb-4">
+        <div class="ai-step-num me-3">2</div>
+        <div>
+          <h5 class="text-white mb-1">Nearby Drivers Queried</h5>
+          <p class="text-white">MongoDB geospatial index returns all available drivers within a configurable radius (default 5km). Redis caches the current positions for speed.</p>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-start mb-4">
+        <div class="ai-step-num me-3">3</div>
+        <div>
+          <h5 class="text-white mb-1">AI Scores Each Driver</h5>
+          <p class="text-white">The scoring engine computes a weighted score for every candidate using the four metrics above. Scores are logged for transparency and future RL training.</p>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-start mb-4">
+        <div class="ai-step-num me-3">4</div>
+        <div>
+          <h5 class="text-white mb-1">Best Match Notified</h5>
+          <p class="text-white">The top-scoring driver receives a push notification (FCM) and a Socket.IO event with ride details. They have 30 seconds to accept or reject.</p>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-start mb-4">
+        <div class="ai-step-num me-3">5</div>
+        <div>
+          <h5 class="text-white mb-1">Fallback Cascade</h5>
+          <p class="text-white">If rejected or timed out, the next-best driver is tried automatically. Stale requests older than 5 minutes are auto-cancelled with the rider notified.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEEDBACK ANALYSIS -->
+<section class="container py-5">
+  <h2 class="text-center fw-bold mb-2">groq-AI Feedback Analysis</h2>
+  <p class="text-center text-white mb-5">After every completed ride, the rider's review is passed to our AI feedback pipeline.</p>
+
+  <div class="row g-4 justify-content-center">
+
+    <div class="col-lg-6">
+      <div class="feedback-card mb-3">
+        <p class="text-white-50 small mb-1">SAMPLE RIDER REVIEW</p>
+        <p class="text-white fst-italic">"Driver was polite and the car was clean but he took a longer route than necessary and didn't know the area well."</p>
+      </div>
+      <div class="card bg-black bg-opacity-50 border-0 shadow-lg p-4 glass-card">
+        <p class="text-white small fw-bold mb-3"><i class="bi bi-robot me-2 text-warning"></i>AI Analysis Output</p>
+
+        <div class="d-flex align-items-center mb-2">
+          <span class="text-white me-2" style="min-width:130px;">Sentiment</span>
+          <span class="sentiment-badge" style="background:rgba(255,193,7,0.2);color:#ffc107;">Mixed</span>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+          <span class="text-white me-2" style="min-width:130px;">Score</span>
+          <span class="text-warning fw-bold">6.2 / 10</span>
+        </div>
+        <div class="d-flex align-items-center mb-3">
+          <span class="text-white me-2" style="min-width:130px;">Categories</span>
+          <span class="badge bg-success me-1">Cleanliness</span>
+          <span class="badge bg-warning text-dark me-1">Navigation</span>
+          <span class="badge bg-info text-dark">Professionalism</span>
+        </div>
+        <div>
+          <p class="text-white small fw-bold mb-1">Improvement Tips for Driver:</p>
+          <ul class="text-white small mb-0">
+            <li>Use in-app navigation and avoid detouring from suggested route.</li>
+            <li>Familiarize with common pickup zones in your operating area.</li>
+            <li>Positive: cleanliness and politeness noted — maintain these standards.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="card bg-black bg-opacity-50 border-0 shadow-lg p-4 glass-card h-100">
+        <h5 class="text-white mb-4">How It Works</h5>
+
+        <div class="d-flex align-items-start mb-3">
+          <i class="bi bi-1-circle-fill text-warning me-3 mt-1" style="font-size:1.3rem;"></i>
+          <p class="text-white mb-0">Rider submits a text review via the app after ride completion.</p>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="bi bi-2-circle-fill text-warning me-3 mt-1" style="font-size:1.3rem;"></i>
+          <p class="text-white mb-0">Review is sent to <code>POST /api/ai/analyze-review</code> — our node-js groq-AI endpoint.</p>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="bi bi-3-circle-fill text-warning me-3 mt-1" style="font-size:1.3rem;"></i>
+          <p class="text-white mb-0">groq-AI extracts sentiment, scores the review 1–10, and categorizes the feedback.</p>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="bi bi-4-circle-fill text-warning me-3 mt-1" style="font-size:1.3rem;"></i>
+          <p class="text-white mb-0">Actionable tips are generated and stored in the <code>Feedback</code> collection.</p>
+        </div>
+        <div class="d-flex align-items-start">
+          <i class="bi bi-5-circle-fill text-warning me-3 mt-1" style="font-size:1.3rem;"></i>
+          <p class="text-white mb-0">Driver dashboard surfaces the tips. Aggregate scores feed into the dispatch rating metric.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="py-5 text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h2 class="fw-bold text-warning">4.7s</h2>
+        <p class="text-white">Avg Driver Match Time</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h2 class="fw-bold text-info">93%</h2>
+        <p class="text-white">Feedback Accuracy vs Manual</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h2 class="fw-bold text-success">2h</h2>
+        <p class="text-white">Demand Forecast Horizon</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="container py-5">
+  <h2 class="text-center mb-4">AI Engine FAQ</h2>
+  <div class="accordion accordion-flush" id="aiFaq">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#a1">
+          Does the AI make final dispatch decisions?
+        </button>
+      </h2>
+      <div id="a1" class="accordion-collapse collapse" data-bs-parent="#aiFaq">
+        <div class="accordion-body text-muted bg-info">
+          By default, yes — the highest-scoring driver is dispatched automatically. Admins can switch to semi-automatic mode where they approve every match, or use manual override at any time from the live map.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#a2">
+          Can I adjust the scoring weights?
+        </button>
+      </h2>
+      <div id="a2" class="accordion-collapse collapse" data-bs-parent="#aiFaq">
+        <div class="accordion-body text-muted bg-info">
+          Yes. Pro and Enterprise tenants can configure custom weighting per fleet via the admin dashboard. For example, a luxury fleet might weight driver rating higher while a budget fleet prioritizes proximity.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#a3">
+          Is rider review data sent to groq-AI
+        </button>
+      </h2>
+      <div id="a3" class="accordion-collapse collapse" data-bs-parent="#aiFaq">
+        <div class="accordion-body text-muted bg-info">
+          Review text is anonymized before being sent to the groq-AI API — all personally identifiable information (names, phone numbers, addresses) is stripped from the payload. Raw review text is never stored by groq-AIunder our API agreement.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#a4">
+          What model powers the demand forecasting?
+        </button>
+      </h2>
+      <div id="a4" class="accordion-collapse collapse" data-bs-parent="#aiFaq">
+        <div class="accordion-body text-muted bg-info">
+          We use Facebook Prophet for short-range time-series forecasting (up to 2 hours ahead) and an LSTM neural network for longer multi-day patterns. Both models are retrained weekly on each tenant's ride history.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 text-center" style="background: linear-gradient(90deg, #ff7e5f, #feb47b);">
+  <div class="container">
+    <h2 class="fw-bold text-dark">Ready to Launch Your Fleet?</h2>
+    <p class="lead text-dark">Start your AI-powered ride dispatch platform today.</p>
+    <a href="contact.html" class="btn btn-dark btn-lg">Get Started</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black text-white text-center py-4">
+  <div class="container">
+    <p>&copy; 2026 SHARE-RIDE SaaS. All rights reserved.</p>
+    <small>
+      <a href="privacy.html" class="text-warning">Privacy</a> |
+      <a href="terms.html" class="text-warning">Terms</a> 
+    </small>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
