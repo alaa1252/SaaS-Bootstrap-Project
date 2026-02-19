@@ -1,0 +1,36 @@
+body {
+    padding-top: 70px;
+    background-color: #0a0a0a;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.hero-section h1 {
+    background: linear-gradient(90deg, #fcb7a6, #f6eee8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-section p {
+    background: linear-gradient(90deg, #000000, #30271f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card.glass-card {
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 126, 95, 0.3);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
