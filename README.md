@@ -12,6 +12,6 @@ Interactivity: Carousels (sliders), accordions, modals, tooltips, form validatio
 
 Styling: Custom CSS overrides for glassmorphism cards, gradients, timelines, avatars, filters, and more.
 
-Pages: Home, About, Services, Contact, Portfolio, Album, Blog, FAQ, Team, Pricing, Returns (Privacy and Terms pages excluded as per request, but links remain in footers for completeness).
+Pages: Home, About, Services, Contact, Portfolio, Album, Blog, FAQ, Team, Pricing (Privacy and Terms pages excluded as per request, but links remain in footers for completeness).
 
 This meets the Website Development Assignment requirements for Bootstrap 5 integration, responsive design, UI/UX creativity, navigation/interactivity, and project organization.
