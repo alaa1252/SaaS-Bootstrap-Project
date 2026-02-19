@@ -1,3 +1,4 @@
+![share-ride home page example image](images/github-picture.png)
 
 This project is a multi-page website for SHARE-RIDE, an AI-powered, SaaS-ready ride-hailing dispatch system (Uber-style). It demonstrates a production-grade platform with real-time location tracking, smart AI driver matching, sentiment feedback, admin dashboards, and more. The website is built using HTML5, CSS3, and Bootstrap 5 for responsive layouts, interactive UI components, and visually appealing designs.
 
