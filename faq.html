@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ — SHARE-RIDE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-white">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-lg"
+     style="background-color: rgba(0,0,0,0.85); backdrop-filter: blur(10px);">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="Share-Ride Logo" width="50" height="50" class="d-inline-block align-text-top me-2" style="filter: drop-shadow(0 0 5px #ff7e5f);">
+        SHARE-RIDE
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Platform</a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="portfolio.html">Live Map</a></li>
+            <li><a class="dropdown-item" href="blog.html">AI Engine</a></li>
+            <li><a class="dropdown-item" href="album.html">Album</a></li>
+            <li><a class="dropdown-item active" href="faq.html">FAQ</a></li>
+            <li><a class="dropdown-item" href="team.html">Team</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header text-center"
+         style="background: linear-gradient(135deg, rgba(116,149,163,0.5), rgba(32,58,67,0.7), rgba(44,83,100,0.5));">
+  <div class="container">
+    <h1 class="display-4 fw-bold text-gradient">Frequently Asked Questions</h1>
+    <p class="lead text-white">Find answers to the most common questions about SHARE-RIDE.</p>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row g-5">
+
+    <div class="col-lg-8">
+
+      <!-- GENERAL -->
+      <h5 class="text-warning mb-3"><i class="bi bi-info-circle-fill me-2"></i>General</h5>
+      <div class="accordion accordion-flush mb-5" id="faqGeneral">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#g1">
+              What is SHARE-RIDE?
+            </button>
+          </h2>
+          <div id="g1" class="accordion-collapse collapse show" data-bs-parent="#faqGeneral">
+            <div class="accordion-body text-muted bg-info">
+              SHARE-RIDE is a multi-tenant, AI-powered ride dispatch SaaS platform. Fleet operators of any size can use it to manage drivers, dispatch rides, track revenue, and analyze performance — all under a custom-branded subdomain.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#g2">
+              Is SHARE-RIDE multi-tenant?
+            </button>
+          </h2>
+          <div id="g2" class="accordion-collapse collapse" data-bs-parent="#faqGeneral">
+            <div class="accordion-body text-muted bg-info">
+              Yes. Every fleet is a separate tenant with fully isolated data, custom subdomain routing (e.g. yourfleet.share-ride.app), and white-label branding options.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#g3">
+              Can I try before subscribing?
+            </button>
+          </h2>
+          <div id="g3" class="accordion-collapse collapse" data-bs-parent="#faqGeneral">
+            <div class="accordion-body text-muted bg-info">
+              Absolutely. Our Free plan lets you onboard up to 5 drivers and process up to 100 rides per month with no credit card required. Upgrade anytime.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BILLING -->
+      <h5 class="text-warning mb-3"><i class="bi bi-credit-card-fill me-2"></i>Billing & Payments</h5>
+      <div class="accordion accordion-flush mb-5" id="faqBilling">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#b1">
+              Which payment methods are accepted?
+            </button>
+          </h2>
+          <div id="b1" class="accordion-collapse collapse" data-bs-parent="#faqBilling">
+            <div class="accordion-body text-muted bg-info">
+              All major credit and debit cards via Stripe (Visa, Mastercard, Amex, Discover). Enterprise plans support invoice-based payment.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#b2">
+              Can I get a refund?
+            </button>
+          </h2>
+          <div id="b2" class="accordion-collapse collapse" data-bs-parent="#faqBilling">
+            <div class="accordion-body text-muted bg-info">
+              Yes. We offer full refunds within 7 days of subscription renewal. See our Return Policy for full details.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#b3">
+              What happens if I exceed my plan limits?
+            </button>
+          </h2>
+          <div id="b3" class="accordion-collapse collapse" data-bs-parent="#faqBilling">
+            <div class="accordion-body text-muted bg-info">
+              You'll receive usage alerts at 80% and 95% of your limit. Overages are billed at a per-ride rate. Auto-upgrade is available to avoid service interruption.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TECHNICAL -->
+      <h5 class="text-warning mb-3"><i class="bi bi-code-slash me-2"></i>Technical</h5>
+      <div class="accordion accordion-flush" id="faqTech">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#t1">
+              What APIs does SHARE-RIDE use?
+            </button>
+          </h2>
+          <div id="t1" class="accordion-collapse collapse" data-bs-parent="#faqTech">
+            <div class="accordion-body text-muted bg-info">
+              Mapbox (routing & maps), Stripe (payments), Firebase (auth & FCM push), groq-AI (AI feedback), and a custom Socket.IO infrastructure for real-time dispatch.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#t2">
+              What is your uptime guarantee?
+            </button>
+          </h2>
+          <div id="t2" class="accordion-collapse collapse" data-bs-parent="#faqTech">
+            <div class="accordion-body text-muted bg-info">
+              We target 95%+ uptime monitored via UptimeRobot. Pro and Enterprise plans include SLA commitments and 24/7 emergency support channels.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-black" data-bs-toggle="collapse" data-bs-target="#t3">
+              Is my data secure?
+            </button>
+          </h2>
+          <div id="t3" class="accordion-collapse collapse" data-bs-parent="#faqTech">
+            <div class="accordion-body text-muted bg-info">
+              Yes. All data is encrypted in transit (HTTPS/TLS), at rest (MongoDB Atlas encryption), and isolated per tenant. We are GDPR-compliant and offer data deletion routes on request.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="col-lg-4">
+      <div class="card bg-black bg-opacity-50 border-0 shadow-lg p-4 text-center glass-card mb-4">
+        <i class="bi bi-chat-dots-fill text-warning display-4 mb-3"></i>
+        <h5 class="text-white">Still have questions?</h5>
+        <p class="text-white">Our support team is happy to help.</p>
+        <a href="contact.html" class="btn btn-warning" style="background-color: #ffbdae; color:#000;">Contact Support</a>
+      </div>
+      <div class="card bg-black bg-opacity-50 border-0 shadow-lg p-4 glass-card">
+        <h6 class="text-white mb-3">Quick Links</h6>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="pricing.html" class="text-warning text-decoration-none"><i class="bi bi-arrow-right-circle me-2"></i>View Pricing Plans</a></li>
+          <li class="mb-2"><a href="services.html" class="text-warning text-decoration-none"><i class="bi bi-arrow-right-circle me-2"></i>Platform Features</a></li>
+          <li class="mb-2"><a href="returns.html" class="text-warning text-decoration-none"><i class="bi bi-arrow-right-circle me-2"></i>Return Policy</a></li>
+          <li><a href="contact.html" class="text-warning text-decoration-none"><i class="bi bi-arrow-right-circle me-2"></i>Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 text-center" style="background: linear-gradient(90deg, #ff7e5f, #feb47b);">
+  <div class="container">
+    <h2 class="fw-bold text-dark">Ready to Launch Your Fleet?</h2>
+    <p class="lead text-dark">Start your AI-powered ride dispatch platform today.</p>
+    <a href="contact.html" class="btn btn-dark btn-lg">Get Started</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black text-white text-center py-4">
+  <div class="container">
+    <p>&copy; 2026 SHARE-RIDE SaaS. All rights reserved.</p>
+    <small>
+      <a href="privacy.html" class="text-warning">Privacy</a> |
+      <a href="terms.html" class="text-warning">Terms</a> 
+    </small>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
